@@ -15,7 +15,8 @@ class Rosetta:
     #    self.__extract_data(file)
 
     def __extract_data(self, file) -> None:
-        self.data = pd.read_csv(file)
-        print(self.data)
-        
-    
+        # Load the data
+        data = pd.read_csv(file, delimiter=",")
+
+        # Clean the data
+        self.data = data.loc[:120,:"W' PER KG BODY MASS"]
